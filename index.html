@@ -132,10 +132,13 @@
     #testimonials .section-title{color:var(--white)}
     #testimonials .section-desc{color:rgba(255,255,255,0.55)}
     .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
-    .t-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);overflow:hidden;transition:background 0.3s}
+    .t-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);overflow:hidden;transition:background 0.3s;display:flex;flex-direction:column}
     .t-card:hover{background:rgba(255,255,255,0.09)}
-    .t-photo{width:100%;height:160px;object-fit:cover;object-position:50% 15%;filter:grayscale(20%) contrast(1.05)}
-    .t-body{padding:22px 20px}
+    .t-photo-wrap{width:100%;overflow:hidden;flex-shrink:0;aspect-ratio:4/3}
+    .t-photo{width:100%;height:100%;object-fit:cover;object-position:50% 25%;filter:grayscale(20%) contrast(1.05);transition:transform 0.4s}
+    .t-card:hover .t-photo{transform:scale(1.04)}
+    
+    .t-body{padding:22px 20px;flex:1}
     .t-stars{color:var(--maple-gold);font-size:0.75rem;margin-bottom:10px}
     .t-quote{font-family:'Noto Sans JP',sans-serif;font-size:0.79rem;font-weight:300;color:rgba(255,255,255,0.82);line-height:2.0;margin-bottom:16px}
     .t-meta{border-top:1px solid rgba(255,255,255,0.08);padding-top:12px}
@@ -242,6 +245,10 @@
       .hero-ctas{flex-direction:column}
       .btn-primary,.btn-line,.btn-secondary{width:100%;justify-content:center}
       .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+      .testimonials-grid{gap:12px}
+      .t-photo-wrap{aspect-ratio:3/2}
+      .t-body{padding:18px 16px}
+      .t-quote{font-size:0.82rem}
     }
   </style>
 </head>
@@ -485,7 +492,7 @@
 
     <div class="testimonials-grid">
       <div class="t-card fade-in">
-        <img src="customer2.png" alt="お客様" class="t-photo">
+        <div class="t-photo-wrap"><img src="customer2.png" alt="お客様" class="t-photo"></div>
         <div class="t-body">
           <div class="t-stars">★★★★★</div>
           <p class="t-quote">コースに入らなくていいのが最高です。月に1〜2回、疲れたときだけ来ています。技術も高くて、毎回しっかりほぐしてもらえます。価格もこのエリアで一番安いと思う。</p>
@@ -493,7 +500,7 @@
         </div>
       </div>
       <div class="t-card fade-in d1">
-        <img src="customer3.png" alt="お客様" class="t-photo">
+        <div class="t-photo-wrap"><img src="customer3.png" alt="お客様" class="t-photo"></div>
         <div class="t-body">
           <div class="t-stars">★★★★★</div>
           <p class="t-quote">以前は別のサロンでコース契約していましたが、使わない月でも支払いが発生して困っていました。こちらは都度払いなので、出張の多い自分にぴったりです。</p>
@@ -501,7 +508,7 @@
         </div>
       </div>
       <div class="t-card fade-in d2">
-        <img src="customer5.png" alt="お客様" class="t-photo">
+        <div class="t-photo-wrap"><img src="customer5.png" alt="お客様" class="t-photo"></div>
         <div class="t-body">
           <div class="t-stars">★★★★★</div>
           <p class="t-quote">初めて行ったとき、料金が安すぎて不安でしたが、技術は全然手を抜いていない。freeコースでまとめてケアできるのも嬉しい。また来たいと思う唯一のサロンです。</p>
@@ -509,7 +516,7 @@
         </div>
       </div>
       <div class="t-card fade-in d3">
-        <img src="customer6.png" alt="お客様" class="t-photo">
+        <div class="t-photo-wrap"><img src="customer6.png" alt="お客様" class="t-photo"></div>
         <div class="t-body">
           <div class="t-stars">★★★★★</div>
           <p class="t-quote">ひげとVIOをまとめてお願いしました。痛みも思ったより少なく、スタッフさんが丁寧に調整してくれたので安心でした。脱毛後の肌が明らかにスッキリしています。</p>
@@ -517,7 +524,7 @@
         </div>
       </div>
       <div class="t-card fade-in d4">
-        <img src="customer7.png" alt="お客様" class="t-photo">
+        <div class="t-photo-wrap"><img src="customer7.png" alt="お客様" class="t-photo"></div>
         <div class="t-body">
           <div class="t-stars">★★★★★</div>
           <p class="t-quote">他店より圧倒的に安く、スタッフが指名ができる点が決め手でした。60分freeコースでお腹周りも一緒にケアできて、大満足の1時間でした。</p>
@@ -525,7 +532,7 @@
         </div>
       </div>
       <div class="t-card fade-in d5">
-        <img src="customer8.png" alt="お客様" class="t-photo">
+        <div class="t-photo-wrap"><img src="customer8.png" alt="お客様" class="t-photo"></div>
         <div class="t-body">
           <div class="t-stars">★★★★☆</div>
           <p class="t-quote">最初は脱毛に抵抗がありましたが、LGBTフレンドリーな雰囲気で、非常に通いやすいです。次回の勧誘も一切なく、気軽にお試しができたのが良かったです。</p>
